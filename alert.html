@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <p>Начинаем считать:</p>
+
+  <script>
+	"use strict";
+	
+	alert( 1 / 0 ); // Infinity
+	alert( "нечисло" * 2 ); // NaN, ошибка
+	
+	// Объект
+	var user = { name: "Вася" };
+	console.log(user);
+	
+	alert( '1' + 2 ); // "12"
+	alert( 2 + '1' ); // "21"
+	alert( 2 - '1' ); // 1
+	alert( 6 / '2' ); // 3
+	
+	var apples = "2";
+	var oranges = "3";
+
+	alert( +apples + +oranges );
+
+	// этот код будет работать по современному стандарту ES5
+  
+	alert( "Сейчас будет ошибка" );
+	[1, 2].forEach(alert);
+	// перебрали массив элементов, в который передали
+	// функцию.
+	
+	// Константы
+	var COLOR_RED = "#F00";
+	var COLOR_GREEN = "#0F0";
+	var COLOR_BLUE = "#00F";
+	var COLOR_ORANGE = "#FF7F00";
+
+	COLOR_ORANGE = 1; // Условные константы
+	var color = COLOR_ORANGE;
+	alert( color ); // #FF7F00
+  </script>
+
+</body>
+
+</html>
