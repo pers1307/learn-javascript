@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <p>https://learn.javascript.ru/uibasic</p>
+
+  <script>
+	"use strict";
+
+	//var years = prompt('Сколько вам лет?', 100);
+
+	//alert('Вам ' + years + ' лет!')
+
+	//var isAdmin = confirm("Вы - администратор?");
+
+	//alert( isAdmin );
+
+	// Внезапно, но выведется!
+	/*
+	if ("0") {
+	  alert( 'Привет' );
+	}
+	*/
+
+	//alert( alert(1) || 2 || alert(3) );
+	//alert( 1 && null && 2 );
+	//alert( String(null) === "null" ); // true
+
+	//var a = +"123"; // 123
+	//var a2 = Number("123"); // 123, тот же эффект
+
+	//alert(a === a2);
+
+	//function showMessage() {
+	//  alert( 'Привет всем присутствующим!' );
+	//}
+
+	//showMessage();
+
+	function sayHi() {
+	  alert( "Привет" );
+	}
+
+	alert( sayHi ); // выведет код функции
+
+	function sayHi() {   // (1)
+	  alert( "Привет" );
+	}
+
+	var func = sayHi;    // (2)
+	func(); // Привет    // (3)
+
+	//sayHi = null;
+	//sayHi();             // ошибка (4)
+
+	var sayHi = function(person) {
+	  alert( "Привет, " + person );
+	};
+
+	sayHi('Вася');
+
+	var sum = new Function('a,b', ' return a+b; ');
+
+	var result = sum(1, 2);
+	alert( result ); // 3
+
+
+  </script>
+
+</body>
+
+</html>
