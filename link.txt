@@ -1,1 +1,2 @@
-https://learn.javascript.ru/properties-and-methods
+https://learn.javascript.ru/string#отрицательные-аргументы
+https://learn.javascript.ru/closures

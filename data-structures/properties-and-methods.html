@@ -14,8 +14,38 @@
 
 	var str = "Привет, мир!";
 	alert( str.length ); // 12
+	alert( str.toUpperCase() ); // "ПРИВЕТ, МИР!"
 
+	var n = 12.345;
 
+	alert( n.toFixed(2) ); // "12.35"
+	alert( n.toFixed(0) ); // "12"
+	alert( n.toFixed(5) ); // "12.34500"
+
+	alert( 12..toFixed(1) ); // 12.0
+
+	n = 0 / 0;
+
+	alert( isNaN(n) ); // true
+	alert( isNaN("12") ); // false, строка преобразовалась к обычному числу 12
+
+	alert( isFinite(1) ); // true
+	alert( isFinite(Infinity) ); // false
+	alert( isFinite(NaN) ); // false
+
+	alert( parseInt('12') );
+	alert( parseFloat('12.34') );
+
+	alert( isNaN(NaN) );
+
+	alert( Math.floor(3.1) );  // 3
+	alert( Math.ceil(3.1) );   // 4
+	alert( Math.round(3.1) );  // 3
+
+	var n = 12.34;
+	alert( n.toFixed(1) ); // "12.3"
+
+	
 
   </script>
 

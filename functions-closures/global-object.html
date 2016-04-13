@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <p>https://learn.javascript.ru/global-object</p>
+
+  <script>
+	"use strict";
+
+	var a = 5; // объявление var создаёт свойство window.a
+	alert( window.a ); // 5
+
+	window.a = 5;
+	alert( a ); // 5
+
+	// Сначала скрипт сканируется и все переменные и функции создаются в глобальной переменной.
+	// потом уже юзаються.
+	alert("a" in window); // true,  т.к. есть свойство window.a
+	alert(a); // равно undefined,  присваивание будет выполнено далее
+	alert(f); // function ...,  готовая к выполнению функция
+	alert(g); // undefined, т.к. это переменная, а не Function Declaration
+
+	var a = 5;
+	function f() { /*...*/ }
+	var g = function() { /*...*/ };
+
+  </script>
+
+</body>
+
+</html>
