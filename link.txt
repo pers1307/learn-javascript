@@ -1,2 +1,1 @@
-https://learn.javascript.ru/string#отрицательные-аргументы
-https://learn.javascript.ru/closures
+https://learn.javascript.ru/descriptors-getters-setters#свойство-функция

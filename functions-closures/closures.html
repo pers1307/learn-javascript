@@ -12,8 +12,83 @@
   <script>
 	"use strict";
 
-	
+	// Свойства функции
+	function f() {}
 
+	f.test = 5;
+	alert( f.test );
+
+	function makeCounter() {
+	  function counter() {
+	    return counter.currentCount++;
+	  };
+	  counter.currentCount = 1;
+
+	  return counter;
+	}
+
+	var counter = makeCounter();
+	alert( counter() ); // 1
+	alert( counter() ); // 2
+
+	// Замыкание - функция + её внешний scope
+
+	//При создании функции с использованием new Function, её свойство [[Scope]] ссылается не на текущий LexicalEnvironment, а на window.
+
+	// Возврат объекта с методами
+	function makeCounter() {
+	  var currentCount = 1;
+
+	  return { // возвратим объект вместо функции
+	    getNext: function() {
+	      return currentCount++;
+	    },
+
+	    set: function(value) {
+	      currentCount = value;
+	    },
+
+	    reset: function() {
+	      currentCount = 1;
+	    }
+	  };
+	}
+
+	var counter = makeCounter();
+
+	alert( counter.getNext() ); // 1
+	alert( counter.getNext() ); // 2
+
+	counter.set(5);
+	alert( counter.getNext() ); // 5
+
+	function makeCounter() {
+	  var currentCount = 1;
+
+	  // возвращаемся к функции
+	  function counter() {
+	      return currentCount++;
+	    }
+
+	  // ...и добавляем ей методы!
+	  counter.set = function(value) {
+	    currentCount = value;
+	  };
+
+	  counter.reset = function() {
+	    currentCount = 1;
+	  };
+
+	  return counter;
+	}
+
+	var counter = makeCounter();
+
+	alert( counter() ); // 1
+	alert( counter() ); // 2
+
+	counter.set(5);
+	alert( counter() ); // 5
   </script>
 
 </body>

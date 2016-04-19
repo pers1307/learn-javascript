@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <p>https://learn.javascript.ru/object-methods</p>
+
+  <script>
+	"use strict";
+
+	var user = {
+	  name: 'Василий',
+
+	  // метод
+	  sayHi: function() {
+	    alert( 'Привет!' );
+	  }
+
+	};
+
+	// Вызов
+	user.sayHi();
+
+	var user = {
+	  name: 'Василий'
+	};
+
+	user.sayHi = function() { // присвоили метод после создания объекта
+	  alert('Привет!');
+	};
+
+	// Вызов метода:
+	user.sayHi();
+
+	var user = {
+	  name: 'Василий',
+
+	  sayHi: function() {
+	    alert( this.name );
+	  }
+	};
+
+	user.sayHi(); // sayHi в контексте user
+
+	var user = { firstName: "Вася" };
+	var admin = { firstName: "Админ" };
+
+	function func() {
+	  alert( this.firstName );
+	}
+
+	user.f = func;
+	admin.g = func;
+
+	// this равен объекту перед точкой:
+	user.f(); // Вася
+	admin.g(); // Админ
+	admin['g'](); // Админ (не важно, доступ к объекту через точку или квадратные скобки)
+
+
+
+
+  </script>
+
+</body>
+
+</html>
